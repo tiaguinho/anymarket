@@ -62,7 +62,7 @@ $response = $anymarket->post('/categories', $body, $params);
  #this body will be converted into json for you
 $body = ['foo' => 'bar', 'bar' => 'foo'];
 
-$response = $anymarket->put('/categories', $body, $params);
+$response = $anymarket->put('/categories/123', $body);
 ```
 
 #### Making DELETE calls

@@ -73,14 +73,14 @@ class Anymarket {
 	 * @param array $params
 	 * @return mixed
 	 */
-		public function put($path, $body = null, $params = []) {
+		public function put($path, $body = null) {
 			$opts = [
 	            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
 	            CURLOPT_CUSTOMREQUEST => "PUT",
 	            CURLOPT_POSTFIELDS => json_encode($body)
 	        ];
 
-	        return $this->execute($path, $opts, $params);
+	        return $this->execute($path, $opts);
 		}
 
 	/**
