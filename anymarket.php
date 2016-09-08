@@ -87,13 +87,12 @@ class Anymarket {
 	 * Execute a DELETE request
 	 * 
 	 * @param string $path
-	 * @param array $params
 	 * @return mixed
 	 */
-		public function delete($path, $params) {
+		public function delete($path) {
 			$opts = [CURLOPT_CUSTOMREQUEST => "DELETE"];
 
-			return $this->execute($path, $opts, $params);
+			return $this->execute($path, $opts);
 		}
 
 	/**
@@ -134,7 +133,7 @@ class Anymarket {
 	 * @param array $params
 	 * @return mixed
 	 */
-		public function execute($path, $opts, $params, $assoc = false) {
+		public function execute($path, $opts, $params = [], $assoc = false) {
 			$uri = $this->getURL($path, $params);
 
 			$ch = curl_init($uri);
